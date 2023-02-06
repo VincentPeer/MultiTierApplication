@@ -65,11 +65,7 @@
             <version>${openapi-generator-version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>ch.heigvd</groupId>
-            <artifactId>quotes-api</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+
     </dependencies>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
