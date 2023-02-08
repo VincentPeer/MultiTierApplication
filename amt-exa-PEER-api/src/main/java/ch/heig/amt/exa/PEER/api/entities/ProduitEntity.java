@@ -34,11 +34,10 @@ public class ProduitEntity {
     @Max(1000)
     private int poids;
 
-    // status_livraison, obligatoire, valeurs possibles : 'dispo', 'colis', 'livre'
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private String status_livraison;
+    private StatusLivraison status_livraison;
 
     @ManyToOne
     @JoinColumn(name = "vil_num")
@@ -46,7 +45,7 @@ public class ProduitEntity {
 
     public ProduitEntity() {}
 
-    public ProduitEntity(int prd_num, String description, int poids, String status_livraison, VilleEntity ville) {
+    public ProduitEntity(int prd_num, String description, int poids, StatusLivraison status_livraison, VilleEntity ville) {
         this.prd_num = prd_num;
         this.description = description;
         this.poids = poids;
@@ -78,11 +77,11 @@ public class ProduitEntity {
     }
 
     public String getStatus_livraison() {
-        return status_livraison;
+        return status_livraison.toString();
     }
 
     public void setStatus_livraison(String status_livraison) {
-        this.status_livraison = status_livraison;
+        this.status_livraison = status_livraison.equals("dispo") ? StatusLivraison.dispo : status_livraison.equals("colis") ? StatusLivraison.colis : StatusLivraison.livre;
     }
 
     public VilleEntity getVille() {

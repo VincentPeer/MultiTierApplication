@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface ProduitRepository extends JpaRepository<ProduitEntity, Integer> {
     ProduitEntity findById(int id);
-
     List<ProduitEntity> findByNomLike(String pattern);
 
 }

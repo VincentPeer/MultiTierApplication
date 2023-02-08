@@ -109,3 +109,24 @@ components:
           type: integer
           format: int32
       title: Quote
+    Produit:
+      description: toutes les caractéristiques d'un produit
+      type: object
+      properties:
+        numero:
+          description: numéro auto-incrémenté du produit
+          type: integer
+          format: int32
+        description:
+          description: description du produit
+          type: string
+        poids:
+          description: poids du produit
+          type: integer
+          format: int32
+        status_livraison:
+          description: statut de livraison du produit
+          type: integer
+        ville:
+          description: id de la ville de livraison du produit
+          type: integer
