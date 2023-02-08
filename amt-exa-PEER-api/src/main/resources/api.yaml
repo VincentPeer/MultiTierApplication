@@ -9,7 +9,29 @@ tags:
   - name: Quotes-end-point
     description: Gestion des quotes
 paths:
-  /
+  /produits/{id}:
+    get:
+      tags:
+        - Produits-end-point
+      summary: Obtient un produit
+      operationId: getProduit
+      parameters:
+        - name: id
+          in: path
+          description: numéro du produit à obtenir
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Produit'
+        '404':
+          description: Not Found
   /quotes:
     get:
       tags:
