@@ -9,6 +9,7 @@ tags:
   - name: Quotes-end-point
     description: Gestion des quotes
 paths:
+  /
   /quotes:
     get:
       tags:
