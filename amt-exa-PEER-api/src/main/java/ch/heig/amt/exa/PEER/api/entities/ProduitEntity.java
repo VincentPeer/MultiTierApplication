@@ -76,8 +76,8 @@ public class ProduitEntity {
         this.poids = poids;
     }
 
-    public String getStatus_livraison() {
-        return status_livraison.toString();
+    public Integer getStatus_livraison() {
+        return status_livraison.ordinal();
     }
 
     public void setStatus_livraison(String status_livraison) {
@@ -87,7 +87,6 @@ public class ProduitEntity {
     public VilleEntity getVille() {
         return ville;
     }
-
     public void setVille(VilleEntity ville) {
         this.ville = ville;
     }
